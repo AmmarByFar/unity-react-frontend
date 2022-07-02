@@ -23,7 +23,7 @@ function App() {
   const [showOverlay, setShowOverlay] = useState(true);
 
   return (
-    <div className="container h-full bg-barscene">
+    <div className="container h-full bg-barscene overflow-hidden">
 
       <LoadingBar
         color='#f11946'

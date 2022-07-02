@@ -107,3 +107,7 @@
 	background-position: 28% 40%;
 	background-repeat: no-repeat;
 }
+
+.overflow-hidden {
+  overflow: hidden;
+}
