@@ -56,7 +56,16 @@
 .loginButton {
   min-width: 100px;
   min-height: 100px;
-  border: 2px blueviolet dotted;
+  border: 2px  dotted lightblue;
+  background-color: white;
+}
+.loginButtonGuest {
+  border: 2px dotted white;
+  background-color: pink;
+}
+.loginButtonConnetWallet {
+  border: 2px dotted pink;
+  background-color: lightblue;
 }
 
 @keyframes App-logo-spin {
