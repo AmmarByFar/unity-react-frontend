@@ -1,0 +1,2 @@
+- Moved background image from style tag to CSS util class `barscene`
+- 

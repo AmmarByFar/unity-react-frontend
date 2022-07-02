@@ -25,3 +25,4 @@ yarn-error.log*
 # Ignore Wesley's temp files and folders.
 /m42*
 **/m42*
+!m42Changelog.md
