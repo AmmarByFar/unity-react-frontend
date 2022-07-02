@@ -60,7 +60,8 @@
   position: relative;
   cursor: pointer;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: start;
   align-items: center;
   margin: 0 30px;
   border-radius: 6px;
@@ -74,6 +75,9 @@
 }
 .loginButtonConnetWallet {
   border: 2px dotted white;
+}
+.loginButtonText {
+  font-weight: bold;
 }
 
 @keyframes App-logo-spin {
