@@ -14,8 +14,12 @@
 
 export function LoginButtonEmpty(props) {
     const defaultChildren = <div className="loginButtonText" >Empty Login Button</div>
+    // if an `onClick` function was supplied, use it. else do nothing
+    const onClick = typeof props.onClick === 'function' ?
+        props.onClick :
+        event => alert("toast");
     return (
-        <div className={['loginButton', props.className].join(' ')} onClick={props.onClick ?? ""}>
+        <div className={['loginButton', props.className].join(' ')} onClick={onClick}>
             {props.children ?? defaultChildren}
         </div>
     );
@@ -23,9 +27,9 @@ export function LoginButtonEmpty(props) {
 
 export function LoginButtonGuest(props) {
     // if an `setShowOverlay` function was supplied, set it to false. else do nothing
-    const onClick = event => typeof props.setShowOverlay === 'function' ?
-        props.setShowOverlay(false) :
-        void(0) ;
+    const onClick = typeof props.setShowOverlay === 'function' ?
+        event => props.setShowOverlay(false) :
+        null;
     return (
         <LoginButtonEmpty className="loginButtonGuest" onClick={onClick}>
             <div className="loginButtonText">Play as Guest.</div>
