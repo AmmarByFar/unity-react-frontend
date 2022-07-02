@@ -21,7 +21,7 @@ export function LoginButtonEmpty(props) {
 }
 
 export function LoginButtonGuest(props) {
-    const onClick (e) => alert("LoginButtonGuest clicked");
+    const onClick = (e) => alert("LoginButtonGuest clicked");
     return (
         <div className={['loginButton', props.className].join(' ')} onClick={props.onClick ?? ""}>
             
@@ -30,7 +30,7 @@ export function LoginButtonGuest(props) {
 }
 
 export function LoginButtonConnetWallet(props) {
-    const onClick (e) => alert("LoginButtonConnetWallet clicked");
+    const onClick = (e) => alert("LoginButtonConnetWallet clicked");
     return (
         <div className={['loginButton', props.className].join(' ')} onClick={props.onClick ?? ""}>
             
