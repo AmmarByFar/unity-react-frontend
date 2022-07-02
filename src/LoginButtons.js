@@ -1,5 +1,5 @@
 import {useRef} from 'react';
-import Button from '@mantine/core'
+import {Button} from '@mantine/core'
 
 /** Empty login button, provides the base to build others from.
  * 
@@ -11,7 +11,7 @@ import Button from '@mantine/core'
  * - className: *string*; Space seperated list of classes to add to this component.
  */
 export function LoginButtonEmpty(props) {
-    const defaultChildren = <div className="loginButtonText" >Empty Login Button</div>
+    const defaultChildren = <Button>Empty Login Button</Button>
     // if an `onClick` function was supplied, use it. else do nothing
     const ref = useRef(null);
     const onClick = typeof props.onClick === 'function' ?
@@ -22,9 +22,9 @@ export function LoginButtonEmpty(props) {
             event.preventDefault();
         };
     return (
-        <div ref={ref} className={['loginButton', props.className].join(' ')} onClick={onClick}>
+        <Button variant="outline" color="red" radius="lg" size="xl" uppercase ref={ref} onClick={onClick}>
             {props.children ?? defaultChildren}
-        </div>
+        </Button>
     );
 }
 
@@ -39,10 +39,9 @@ export function LoginButtonGuest(props) {
         event => props.setShowOverlay(false) :
         null;
     return (
-        <LoginButtonEmpty className="loginButtonGuest" onClick={onClick}>
+        <LoginButtonEmpty onClick={onClick}>
             {/* Button Content here */}
             <div className="loginButtonText">Play as Guest.</div>
-            <div>Play as a guest. Some features will not be available.</div>
         </LoginButtonEmpty>
     );
 }
@@ -59,7 +58,6 @@ export function LoginButtonConnetWallet(props) {
         <LoginButtonEmpty className="loginButtonConnetWallet" onClick={onClick}>
             {/* Button Content here */}
             <div className="loginButtonText">Connect Wallet</div>
-            <div>Connect your crypto wallet for full experience.</div>
         </LoginButtonEmpty>
     );
 }
