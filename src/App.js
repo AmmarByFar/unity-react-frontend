@@ -33,9 +33,10 @@ function App() {
       />
 
 
-      {isLoaded === false && (
+      {isLoaded === false || showOverlay && (
         // We'll conditionally render the loading overlay if the Unity
-        // Application is not loaded.
+        // Application is not loaded
+        // AND if the user has yet to click on a button.
         <div className="loading-overlay">
           <p>Loading... ({loadingPercentage}%)</p>
         </div>
