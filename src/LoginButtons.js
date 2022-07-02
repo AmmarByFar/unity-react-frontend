@@ -13,9 +13,10 @@
  */
 
 export function LoginButtonEmpty(props) {
+    const defaultChildren = <div className="loginButtonText" >Empty Login Button</div>
     return (
         <div className={['loginButton', props.className].join(' ')} onClick={props.onClick ?? ""}>
-            
+            {props.children ?? defaultChildren}
         </div>
     );
 }
@@ -23,14 +24,18 @@ export function LoginButtonEmpty(props) {
 export function LoginButtonGuest(props) {
     const onClick = (e) => alert("LoginButtonGuest clicked");
     return (
-        <LoginButtonEmpty className="loginButtonGuest" onClick={onClick} />
+        <LoginButtonEmpty className="loginButtonGuest" onClick={onClick}>
+            <div className="loginButtonText">Play as Guest.</div>
+        </LoginButtonEmpty>
     );
 }
 
 export function LoginButtonConnetWallet(props) {
     const onClick = (e) => alert("LoginButtonConnetWallet clicked");
     return (
-        <LoginButtonEmpty className="loginButtonConnetWallet" onClick={onClick} />
+        <LoginButtonEmpty className="loginButtonConnetWallet" onClick={onClick}>
+            <div className="loginButtonText">Connect Wallet</div>
+        </LoginButtonEmpty>
     );
 }
 export default LoginButtonEmpty
