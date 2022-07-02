@@ -61,7 +61,7 @@
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: space-between;
   align-items: center;
   margin: 0 30px;
   border-radius: 6px;

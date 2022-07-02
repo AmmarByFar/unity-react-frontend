@@ -38,10 +38,11 @@ function App() {
         // AND if the user has yet to click on a button.
         <div className="loading-overlay bg-barscene">
 
-          <LoginButtonEmpty />
+          <LoginButtonConnetWallet />
           <LoginButtonGuest setShowOverlay={setShowOverlay} />
-          <LoginButtonConnetWallet /> <br/>
-          <p>Loading... ({loadingPercentage}%)</p>
+          {isLoaded == false && showOverlay == false && (
+            <p style={{color:'white'}}>Loading... ({loadingPercentage}%)</p>
+          )}
         </div>
       )}
       <Unity className="unity" unityProvider={unityProvider} />
