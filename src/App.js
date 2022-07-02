@@ -2,7 +2,7 @@ import './App.css';
 import React, { useState }  from 'react';
 import {Unity, useUnityContext } from "react-unity-webgl";
 import LoadingBar from 'react-top-loading-bar'
-import {LoginButtonEmpty} from './loginButton/LoginButtonEmpty.js'
+import LoginButtonEmpty from './LoginButtons.js'
 
 function App() {
   const { unityProvider, isLoaded, loadingProgression } = useUnityContext({

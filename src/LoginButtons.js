@@ -12,7 +12,7 @@
  * 
  */
 
-export default function LoginButtonEmpty(props) {
+export function LoginButtonEmpty(props) {
     return (
         <div className={['loginButton', props.className].join(' ')} onClick={props.onClick ?? ""}>
             
@@ -20,3 +20,4 @@ export default function LoginButtonEmpty(props) {
     );
 }
 
+export default LoginButtonEmpty
