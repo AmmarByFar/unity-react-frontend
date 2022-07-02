@@ -1,9 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
 import React, { useState }  from 'react';
 import {Unity, useUnityContext } from "react-unity-webgl";
 import LoadingBar from 'react-top-loading-bar'
-import background from './images/background.jpg'
+import {LoginButtonEmpty, LoginButtonGuest, LoginButtonConnetWallet} from './LoginButtons.js'
 
 function App() {
   const { unityProvider, isLoaded, loadingProgression } = useUnityContext({
@@ -19,10 +18,12 @@ function App() {
 
   // Variables for react-top-loading-bar, we're only using setProgress(0) in <LoadingBar> tag 
   // passing in loadingPercentage given by unity context
-  const [progress, setProgress] = useState(0)
+  const [progress, setProgress] = useState(0);
+  // extra var for controlling the overlay
+  const [showOverlay, setShowOverlay] = useState(true);
 
   return (
-    <div style={{backgroundImage: `url(${background})` }} className="container">
+    <div className="container h-full bg-barscene overflow-hidden">
 
       <LoadingBar
         color='#f11946'
@@ -30,11 +31,18 @@ function App() {
         onLoaderFinished={() => setProgress(0)}
       />
 
-      {isLoaded === false && (
+
+      {isLoaded === false || showOverlay && (
         // We'll conditionally render the loading overlay if the Unity
-        // Application is not loaded.
-        <div className="loading-overlay">
-          <p>Loading... ({loadingPercentage}%)</p>
+        // Application is not loaded
+        // AND if the user has yet to click on a button.
+        <div className="loading-overlay bg-barscene">
+
+          <LoginButtonConnetWallet />
+          <LoginButtonGuest setShowOverlay={setShowOverlay} />
+          {isLoaded == false && showOverlay == false && (
+            <p style={{color:'white'}}>Loading... ({loadingPercentage}%)</p>
+          )}
         </div>
       )}
       <Unity className="unity" unityProvider={unityProvider} />
