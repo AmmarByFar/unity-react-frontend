@@ -54,18 +54,26 @@
 }
 
 .loginButton {
-  min-width: 100px;
-  min-height: 100px;
-  border: 2px  dotted lightblue;
+  width: 368px;
+  height: 474px;
+  box-sizing: content-box;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 30px;
+  border-radius: 6px;
+  color: #161518;
   background-color: white;
+  border: 2px dotted pink;
 }
+
 .loginButtonGuest {
-  border: 2px dotted white;
-  background-color: pink;
+  border: 2px  dotted lightblue;
 }
 .loginButtonConnetWallet {
-  border: 2px dotted pink;
-  background-color: lightblue;
+  border: 2px dotted white;
 }
 
 @keyframes App-logo-spin {
