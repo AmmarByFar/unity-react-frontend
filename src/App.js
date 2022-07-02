@@ -19,7 +19,9 @@ function App() {
 
   // Variables for react-top-loading-bar, we're only using setProgress(0) in <LoadingBar> tag 
   // passing in loadingPercentage given by unity context
-  const [progress, setProgress] = useState(0)
+  const [progress, setProgress] = useState(0);
+  // extra var for controlling the overlay
+  const [showOverlay, setShowOverlay] = useState(true);
 
   return (
     <div style={{backgroundImage: `url(${background})` }} className="container">
@@ -29,6 +31,7 @@ function App() {
         progress={loadingPercentage}
         onLoaderFinished={() => setProgress(0)}
       />
+
 
       {isLoaded === false && (
         // We'll conditionally render the loading overlay if the Unity
