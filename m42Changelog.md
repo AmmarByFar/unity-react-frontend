@@ -5,6 +5,7 @@
 - added `showOverlay` boolean state to App.js  
 To close the overlay, The game must be fully loaded and
 `showOverlay` must be set to `false` via `setShowOverlay()`
+- Overlay buttons added 
 
 ### Overlay Background
 
