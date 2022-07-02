@@ -24,7 +24,7 @@ function App() {
   const [showOverlay, setShowOverlay] = useState(true);
 
   return (
-    <div style={{backgroundImage: `url(${background})` }} className="container">
+    <div style={{backgroundImage: `url(${background})`, backgroundSize: 'cover' }} className="container h-full">
 
       <LoadingBar
         color='#f11946'
