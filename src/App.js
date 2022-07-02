@@ -1,9 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
 import React, { useState }  from 'react';
 import {Unity, useUnityContext } from "react-unity-webgl";
 import LoadingBar from 'react-top-loading-bar'
-import background from './images/background.jpg'
 
 function App() {
   const { unityProvider, isLoaded, loadingProgression } = useUnityContext({
@@ -38,6 +36,7 @@ function App() {
         // Application is not loaded
         // AND if the user has yet to click on a button.
         <div className="loading-overlay bg-barscene">
+
           <p>Loading... ({loadingPercentage}%)</p>
         </div>
       )}
