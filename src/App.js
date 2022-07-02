@@ -39,7 +39,7 @@ function App() {
         <div className="loading-overlay bg-barscene">
 
           <LoginButtonEmpty />
-          <LoginButtonGuest />
+          <LoginButtonGuest setShowOverlay={setShowOverlay} />
           <LoginButtonConnetWallet /> <br/>
           <p>Loading... ({loadingPercentage}%)</p>
         </div>
