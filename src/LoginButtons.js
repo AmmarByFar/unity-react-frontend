@@ -20,4 +20,21 @@ export function LoginButtonEmpty(props) {
     );
 }
 
+export function LoginButtonGuest(props) {
+    const onClick (e) => alert("LoginButtonGuest clicked");
+    return (
+        <div className={['loginButton', props.className].join(' ')} onClick={props.onClick ?? ""}>
+            
+        </div>
+    );
+}
+
+export function LoginButtonConnetWallet(props) {
+    const onClick (e) => alert("LoginButtonConnetWallet clicked");
+    return (
+        <div className={['loginButton', props.className].join(' ')} onClick={props.onClick ?? ""}>
+            
+        </div>
+    );
+}
 export default LoginButtonEmpty
