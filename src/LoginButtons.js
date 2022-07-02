@@ -27,6 +27,11 @@ export function LoginButtonEmpty(props) {
     );
 }
 
+/** Button to login as a guest, just removes the overlay.
+ * 
+ * # Required props
+ * - setShowOverLay: *function*; the function to set the "showOverlay" state in App.
+ */
 export function LoginButtonGuest(props) {
     // if an `setShowOverlay` function was supplied, set it to false. else do nothing
     const onClick = typeof props.setShowOverlay === 'function' ?
@@ -34,16 +39,24 @@ export function LoginButtonGuest(props) {
         null;
     return (
         <LoginButtonEmpty className="loginButtonGuest" onClick={onClick}>
+            {/* Button Content here */}
             <div className="loginButtonText">Play as Guest.</div>
             <div>Play as a guest. Some features will not be available.</div>
         </LoginButtonEmpty>
     );
 }
 
+/** Button to connect wallet to app.
+ * 
+ * onClick function is ready to be defined below. Happy coding Ammar!
+ */
 export function LoginButtonConnetWallet(props) {
+
     const onClick = event => alert("Connect Wallet Clicked");
+    
     return (
         <LoginButtonEmpty className="loginButtonConnetWallet" onClick={onClick}>
+            {/* Button Content here */}
             <div className="loginButtonText">Connect Wallet</div>
             <div>Connect your crypto wallet for full experience.</div>
         </LoginButtonEmpty>
