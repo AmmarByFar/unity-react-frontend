@@ -12,14 +12,21 @@
  * 
  */
 
+import {useRef} from 'react';
+
 export function LoginButtonEmpty(props) {
     const defaultChildren = <div className="loginButtonText" >Empty Login Button</div>
     // if an `onClick` function was supplied, use it. else do nothing
+    const ref = useRef(null);
     const onClick = typeof props.onClick === 'function' ?
         props.onClick :
-        event => alert("toast");
+        event => {
+            event.stopPropagation();
+            event.stopImmediatePropagation(); 
+            event.preventDefault();
+        };
     return (
-        <div className={['loginButton', props.className].join(' ')} onClick={onClick}>
+        <div ref={ref} className={['loginButton', props.className].join(' ')} onClick={onClick}>
             {props.children ?? defaultChildren}
         </div>
     );
