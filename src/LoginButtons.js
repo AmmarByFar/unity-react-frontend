@@ -23,9 +23,9 @@ export function LoginButtonEmpty(props) {
 
 export function LoginButtonGuest(props) {
     // if an `setShowOverlay` function was supplied, set it to false. else do nothing
-    const onClick = event => typeof props.setShowOverLay === 'function' ?
-        props.setShowOverLay(false) :
-        '' ;
+    const onClick = event => typeof props.setShowOverlay === 'function' ?
+        props.setShowOverlay(false) :
+        void(0) ;
     return (
         <LoginButtonEmpty className="loginButtonGuest" onClick={onClick}>
             <div className="loginButtonText">Play as Guest.</div>
