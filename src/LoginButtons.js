@@ -34,7 +34,7 @@ export function LoginButtonGuest(props) {
 }
 
 export function LoginButtonConnetWallet(props) {
-    onClick = event => alert("Connect Wallet Clicked");
+    const onClick = event => alert("Connect Wallet Clicked");
     return (
         <LoginButtonEmpty className="loginButtonConnetWallet" onClick={onClick}>
             <div className="loginButtonText">Connect Wallet</div>
