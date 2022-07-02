@@ -24,7 +24,7 @@ function App() {
   const [showOverlay, setShowOverlay] = useState(true);
 
   return (
-    <div style={{backgroundImage: `url(${background})`, backgroundSize: 'cover' }} className="container h-full">
+    <div className="container h-full bg-barscene">
 
       <LoadingBar
         color='#f11946'

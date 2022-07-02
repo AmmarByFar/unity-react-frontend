@@ -70,3 +70,8 @@
 .h-full {
   height: 100%;
 }
+
+.bg-barscene {
+  background-image: url('../public/background.jpg');
+  background-size:  cover;
+}
