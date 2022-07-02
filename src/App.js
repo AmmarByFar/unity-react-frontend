@@ -16,6 +16,9 @@ function App() {
   // We'll round the loading progression to a whole number to represent the
   // percentage of the Unity Application that has loaded.
   const loadingPercentage = Math.round(loadingProgression * 100);
+
+  // Variables for react-top-loading-bar, we're only using setProgress(0) in <LoadingBar> tag 
+  // passing in loadingPercentage given by unity context
   const [progress, setProgress] = useState(0)
 
   return (
@@ -34,9 +37,7 @@ function App() {
           <p>Loading... ({loadingPercentage}%)</p>
         </div>
       )}
-
       <Unity className="unity" unityProvider={unityProvider} />
-
     </div>
   );
 }
