@@ -34,7 +34,7 @@
   width: auto;
   height: auto;
 }
-.container > .loading-overlay {
+.loading-overlay {
   /* We'll render the overlay on top of the Unity Application. */
   position: absolute;
   top: 0;
@@ -72,6 +72,11 @@
 }
 
 .bg-barscene {
-  background-image: url('../public/background.jpg');
   background-size:  cover;
+}
+.bg-barscene {
+  background-image: url('../public/background.jpg');
+	background-size: cover;
+	background-position: 28% 40%;
+	background-repeat: no-repeat;
 }
