@@ -8,14 +8,15 @@
  * 
  * # Optional Props
  * 
- * - class: *string*; Space seperated list of classes to add to this component.
+ * - className: *string*; Space seperated list of classes to add to this component.
  * 
  */
 
-function LoginButtonEmpty(props) {
-    return 
-        <div className={['loginButton', props.class].join(' ')} onClick={props.onClick ?? ""}>
+export default function LoginButtonEmpty(props) {
+    return (
+        <div className={['loginButton', props.className].join(' ')} onClick={props.onClick ?? ""}>
             
         </div>
-    ;
+    );
 }
+
