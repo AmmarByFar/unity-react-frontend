@@ -34,7 +34,7 @@
   width: auto;
   height: auto;
 }
-.container > .loading-overlay {
+.loading-overlay {
   /* We'll render the overlay on top of the Unity Application. */
   position: absolute;
   top: 0;
@@ -53,6 +53,33 @@
   height: 100%;
 }
 
+.loginButton {
+  width: 368px;
+  height: 474px;
+  box-sizing: content-box;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 30px;
+  border-radius: 6px;
+  color: #161518;
+  background-color: white;
+  border: 2px dotted pink;
+}
+
+.loginButtonGuest {
+  border: 2px  dotted lightblue;
+}
+.loginButtonConnetWallet {
+  border: 2px dotted white;
+}
+.loginButtonText {
+  font-weight: bold;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -60,4 +87,27 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Utility classes I want to override everything else. - Wesley Williams*/
+
+.h-screen {
+  height: 100vh;
+}
+.h-full {
+  height: 100%;
+}
+
+.bg-barscene {
+  background-size:  cover;
+}
+.bg-barscene {
+  background-image: url('../public/background.jpg');
+	background-size: cover;
+	background-position: 28% 40%;
+	background-repeat: no-repeat;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
