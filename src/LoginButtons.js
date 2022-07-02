@@ -21,8 +21,8 @@ export function LoginButtonEmpty(props) {
     const onClick = typeof props.onClick === 'function' ?
         props.onClick :
         event => {
+            event.nativeEvent.stopImmediatePropagation(); 
             event.stopPropagation();
-            event.stopImmediatePropagation(); 
             event.preventDefault();
         };
     return (
