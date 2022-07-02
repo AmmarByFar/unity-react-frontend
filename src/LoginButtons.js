@@ -22,7 +22,10 @@ export function LoginButtonEmpty(props) {
 }
 
 export function LoginButtonGuest(props) {
-    const onClick = (e) => alert("LoginButtonGuest clicked");
+    // if an `setShowOverlay` function was supplied, set it to false. else do nothing
+    const onClick = event => typeof props.setShowOverLay === 'function' ?
+        props.setShowOverLay(false) :
+        '' ;
     return (
         <LoginButtonEmpty className="loginButtonGuest" onClick={onClick}>
             <div className="loginButtonText">Play as Guest.</div>
@@ -31,7 +34,7 @@ export function LoginButtonGuest(props) {
 }
 
 export function LoginButtonConnetWallet(props) {
-    const onClick = (e) => alert("LoginButtonConnetWallet clicked");
+    onclick = event => alert("Connect Wallet Clicked");
     return (
         <LoginButtonEmpty className="loginButtonConnetWallet" onClick={onClick}>
             <div className="loginButtonText">Connect Wallet</div>
