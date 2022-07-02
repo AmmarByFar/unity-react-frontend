@@ -22,4 +22,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-/m42
+# Ignore Wesley's temp files and folders.
+/m42*
+**/m42*
