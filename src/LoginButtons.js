@@ -1,19 +1,14 @@
+import {useRef} from 'react';
+
 /** Empty login button, provides the base to build others from.
- * 
- * # Required Props
- * 
- * - onClick: *function*; defines the onClick behavior of the button.  
- *    Component will still render correctly without this, a button that does nothing
- *    is just kinda pointless.
  * 
  * # Optional Props
  * 
- * - className: *string*; Space seperated list of classes to add to this component.
+ * - onClick: *function*; defines the onClick behavior of the button.  
+ *    if not passed in, does nothing.
  * 
+ * - className: *string*; Space seperated list of classes to add to this component.
  */
-
-import {useRef} from 'react';
-
 export function LoginButtonEmpty(props) {
     const defaultChildren = <div className="loginButtonText" >Empty Login Button</div>
     // if an `onClick` function was supplied, use it. else do nothing
@@ -40,6 +35,7 @@ export function LoginButtonGuest(props) {
     return (
         <LoginButtonEmpty className="loginButtonGuest" onClick={onClick}>
             <div className="loginButtonText">Play as Guest.</div>
+            <div>Play as a guest. Some features will not be available.</div>
         </LoginButtonEmpty>
     );
 }
@@ -49,6 +45,7 @@ export function LoginButtonConnetWallet(props) {
     return (
         <LoginButtonEmpty className="loginButtonConnetWallet" onClick={onClick}>
             <div className="loginButtonText">Connect Wallet</div>
+            <div>Connect your crypto wallet for full experience.</div>
         </LoginButtonEmpty>
     );
 }
