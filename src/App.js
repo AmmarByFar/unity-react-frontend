@@ -3,6 +3,7 @@ import React, { useState }  from 'react';
 import {Unity, useUnityContext } from "react-unity-webgl";
 import LoadingBar from 'react-top-loading-bar'
 import {LoginButtonEmpty, LoginButtonGuest, LoginButtonConnetWallet} from './LoginButtons.js'
+import {Stack} from '@mantine/core'
 
 function App() {
   const { unityProvider, isLoaded, loadingProgression } = useUnityContext({
@@ -37,9 +38,10 @@ function App() {
         // Application is not loaded
         // AND if the user has yet to click on a button.
         <div className="loading-overlay bg-barscene">
-
-          <LoginButtonConnetWallet />
-          <LoginButtonGuest setShowOverlay={setShowOverlay} />
+          <Stack align="center" spacing="lg">
+            <LoginButtonConnetWallet />
+            <LoginButtonGuest setShowOverlay={setShowOverlay} />
+          </Stack>
           {isLoaded == false && showOverlay == false && (
             <p style={{color:'white'}}>Loading... ({loadingPercentage}%)</p>
           )}

@@ -1,4 +1,5 @@
 import {useRef} from 'react';
+import {Button} from '@mantine/core'
 
 /** Empty login button, provides the base to build others from.
  * 
@@ -10,7 +11,7 @@ import {useRef} from 'react';
  * - className: *string*; Space seperated list of classes to add to this component.
  */
 export function LoginButtonEmpty(props) {
-    const defaultChildren = <div className="loginButtonText" >Empty Login Button</div>
+    const defaultChildren = <Button>Empty Login Button</Button>
     // if an `onClick` function was supplied, use it. else do nothing
     const ref = useRef(null);
     const onClick = typeof props.onClick === 'function' ?
@@ -21,9 +22,12 @@ export function LoginButtonEmpty(props) {
             event.preventDefault();
         };
     return (
-        <div ref={ref} className={['loginButton', props.className].join(' ')} onClick={onClick}>
-            {props.children ?? defaultChildren}
+        <div style={{width: 350}}>
+            <Button color="violet" size="xl" uppercase fullWidth ref={ref} onClick={onClick}>
+                {props.children ?? defaultChildren}
+            </Button>
         </div>
+        
     );
 }
 
@@ -38,11 +42,15 @@ export function LoginButtonGuest(props) {
         event => props.setShowOverlay(false) :
         null;
     return (
-        <LoginButtonEmpty className="loginButtonGuest" onClick={onClick}>
-            {/* Button Content here */}
-            <div className="loginButtonText">Play as Guest.</div>
-            <div>Play as a guest. Some features will not be available.</div>
-        </LoginButtonEmpty>
+        <div style={{width: 350}}>
+            <Button variant='light' color="violet" size="xl" uppercase fullWidth onClick={onClick}>
+                <div>Play as Guest</div>
+            </Button>
+        </div>
+        // <LoginButtonEmpty onClick={onClick}>
+        //     {/* Button Content here */}
+        //     <div className="loginButtonText">Play as Guest.</div>
+        // </LoginButtonEmpty>
     );
 }
 
@@ -58,7 +66,6 @@ export function LoginButtonConnetWallet(props) {
         <LoginButtonEmpty className="loginButtonConnetWallet" onClick={onClick}>
             {/* Button Content here */}
             <div className="loginButtonText">Connect Wallet</div>
-            <div>Connect your crypto wallet for full experience.</div>
         </LoginButtonEmpty>
     );
 }
