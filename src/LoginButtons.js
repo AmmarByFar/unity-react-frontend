@@ -22,9 +22,12 @@ export function LoginButtonEmpty(props) {
             event.preventDefault();
         };
     return (
-        <Button variant="outline" color="red" radius="lg" size="xl" uppercase ref={ref} onClick={onClick}>
-            {props.children ?? defaultChildren}
-        </Button>
+        <div style={{width: 350}}>
+            <Button color="violet" size="xl" uppercase fullWidth ref={ref} onClick={onClick}>
+                {props.children ?? defaultChildren}
+            </Button>
+        </div>
+        
     );
 }
 
@@ -39,10 +42,15 @@ export function LoginButtonGuest(props) {
         event => props.setShowOverlay(false) :
         null;
     return (
-        <LoginButtonEmpty onClick={onClick}>
-            {/* Button Content here */}
-            <div className="loginButtonText">Play as Guest.</div>
-        </LoginButtonEmpty>
+        <div style={{width: 350}}>
+            <Button variant='light' color="violet" size="xl" uppercase fullWidth onClick={onClick}>
+                <div>Play as Guest</div>
+            </Button>
+        </div>
+        // <LoginButtonEmpty onClick={onClick}>
+        //     {/* Button Content here */}
+        //     <div className="loginButtonText">Play as Guest.</div>
+        // </LoginButtonEmpty>
     );
 }
 
